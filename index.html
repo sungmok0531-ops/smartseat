@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>SmartSeat - 도서관 좌석 예약</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>SmartSeat</h1>
+    <p>대학 도서관 좌석 예약 및 혼잡도 예측 (데모 버전)</p>
+  </header>
+
+  <nav>
+    <button onclick="showSection('seat-section')">좌석 조회/예약</button>
+    <button onclick="showSection('mypage-section')">마이페이지</button>
+  </nav>
+
+  <main>
+    <!-- 좌석 조회 및 예약 영역 -->
+    <section id="seat-section">
+      <h2>좌석 조회 및 예약</h2>
+
+      <div class="controls">
+        <label>열람실 선택:
+          <select id="room-select" onchange="renderSeats()">
+            <option value="101">101 열람실</option>
+            <option value="102">102 열람실</option>
+          </select>
+        </label>
+
+        <label>시간대 선택:
+          <select id="time-select">
+            <option value="09:00-12:00">09:00-12:00</option>
+            <option value="12:00-15:00">12:00-15:00</option>
+            <option value="15:00-18:00">15:00-18:00</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="seat-map"></div>
+
+      <div id="selected-seat-info">
+        <p>선택된 좌석: <span id="selected-seat-label">없음</span></p>
+        <button id="reserve-btn" disabled onclick="reserveSeat()">예약하기</button>
+      </div>
+
+      <div id="message"></div>
+    </section>
+
+    <!-- 마이페이지 영역 -->
+    <section id="mypage-section" style="display:none;">
+      <h2>마이페이지 - 내 예약 내역</h2>
+      <div id="reservation-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>SmartSeat Demo · PRD 기반 바이브코딩 과제</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

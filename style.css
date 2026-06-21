@@ -1,0 +1,127 @@
+body {
+  font-family: "Pretendard", system-ui, -apple-system, sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+}
+
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 16px;
+}
+
+nav {
+  background: #34495e;
+  padding: 8px;
+  text-align: center;
+}
+
+nav button {
+  margin: 0 8px;
+  padding: 8px 16px;
+  border: none;
+  background: #ecf0f1;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+nav button:hover {
+  background: #bdc3c7;
+}
+
+main {
+  padding: 16px;
+}
+
+section {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.controls {
+  margin-bottom: 12px;
+}
+
+#seat-map {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.seat {
+  padding: 10px;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.seat.available {
+  background: #2ecc71;
+  color: white;
+}
+
+.seat.reserved {
+  background: #e74c3c;
+  color: white;
+  cursor: not-allowed;
+}
+
+.seat.selected {
+  outline: 3px solid #2980b9;
+}
+
+#selected-seat-info {
+  margin-top: 8px;
+}
+
+#reserve-btn {
+  margin-top: 4px;
+  padding: 6px 12px;
+  border: none;
+  background: #2980b9;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#reserve-btn:disabled {
+  background: #95a5a6;
+  cursor: not-allowed;
+}
+
+#message {
+  margin-top: 8px;
+  color: #27ae60;
+}
+
+#reservation-list {
+  margin-top: 8px;
+}
+
+.reservation-item {
+  border-bottom: 1px solid #ddd;
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reservation-item button {
+  padding: 4px 8px;
+  border: none;
+  background: #e74c3c;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 12px;
+  font-size: 12px;
+  color: #7f8c8d;
+}
